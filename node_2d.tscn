@@ -1,0 +1,109 @@
+[gd_scene load_steps=12 format=3 uid="uid://b2qi78yd4ghdd"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_tnh5i"]
+[ext_resource type="Texture2D" uid="uid://cujw3vpo4nq14" path="res://art/playerGrey_up1.png" id="2_mi8il"]
+[ext_resource type="Texture2D" uid="uid://ghc5pgnwqm2j" path="res://art/playerGrey_up2.png" id="3_ahrfo"]
+[ext_resource type="Texture2D" uid="uid://dtc2wxmtckyb2" path="res://art/playerGrey_walk1.png" id="4_t6o1l"]
+[ext_resource type="Texture2D" uid="uid://sv7r3eyeg0at" path="res://art/playerGrey_walk2.png" id="5_1kqf8"]
+[ext_resource type="Texture2D" uid="uid://c6bkvpvaadml1" path="res://art/tileset.png" id="5_6ld6r"]
+[ext_resource type="Script" path="res://TileMap.gd" id="7_ydo6r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k4dpg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mi8il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ahrfo")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_t6o1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1kqf8")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dkr2k"]
+radius = 14.3992
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4h6qc"]
+texture = ExtResource("5_6ld6r")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wobtm"]
+sources/0 = SubResource("TileSetAtlasSource_4h6qc")
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, 325)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_tnh5i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(243, -114.25)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_k4dpg")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(243, -114.25)
+scale = Vector2(2.70848, 2.33134)
+shape = SubResource("CircleShape2D_dkr2k")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_wobtm")
+format = 2
+layer_0/tile_data = PackedInt32Array(458755, 393216, 2, 393220, 458752, 1, 458756, 458752, 2, 327685, 524288, 0, 393221, 524288, 1, 458757, 524288, 2, 327686, 196608, 0, 393222, 196608, 1, 458758, 196608, 2, 327687, 262144, 0, 393223, 262144, 1, 458759, 262144, 2, 327688, 327680, 0, 393224, 327680, 1, 458760, 327680, 2, 327689, 196608, 0, 393225, 196608, 1, 458761, 196608, 2, 327690, 262144, 0, 393226, 262144, 1, 458762, 262144, 2, 327691, 327680, 0, 393227, 327680, 1, 458763, 327680, 2, 327692, 196608, 0, 393228, 196608, 1, 458764, 196608, 2, 327693, 262144, 0, 393229, 262144, 1, 458765, 262144, 2, 327694, 327680, 0, 393230, 327680, 1, 458766, 327680, 2, 327695, 196608, 0, 393231, 196608, 1, 458767, 196608, 2, 327696, 262144, 0, 393232, 262144, 1, 458768, 262144, 2, 327697, 327680, 0, 393233, 327680, 1, 458769, 327680, 2, 327698, 196608, 0, 393234, 196608, 1, 458770, 196608, 2, 327699, 262144, 0, 393235, 262144, 1, 458771, 262144, 2, 327700, 327680, 0, 393236, 327680, 1, 458772, 327680, 2, 327701, 196608, 0, 393237, 196608, 1, 458773, 196608, 2, 327702, 262144, 0, 393238, 262144, 1, 458774, 262144, 2, 327703, 327680, 0, 393239, 327680, 1, 458775, 327680, 2)
+script = ExtResource("7_ydo6r")
