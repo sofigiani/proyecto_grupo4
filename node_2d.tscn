@@ -481,10 +481,6 @@ shape = SubResource("CircleShape2D_dkr2k")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(244, -115)
-limit_left = -200
-limit_top = -50
-limit_right = 900
-limit_bottom = 300
 editor_draw_screen = false
 
 [node name="TileMap" type="TileMap" parent="."]
