@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbvunhyh4c6l4"]
+[gd_scene load_steps=8 format=3 uid="uid://cbvunhyh4c6l4"]
 
 [ext_resource type="Texture2D" uid="uid://0k8lq04rk3mv" path="res://art/enemyWalking_1.png" id="2_hxqv4"]
 [ext_resource type="Script" path="res://enemies/alberto animacion.gd" id="3_pgws3"]
@@ -15,7 +15,7 @@ animations = [{
 "texture": ExtResource("3_rhrcx")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 3.0
 }]
 
@@ -23,13 +23,34 @@ animations = [{
 radius = 34.0
 height = 94.0
 
+[sub_resource type="Animation" id="Animation_757ud"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ajx1y"]
+_data = {
+"new_animation": SubResource("Animation_757ud")
+}
+
 [node name="Alberto" type="CharacterBody2D"]
 
 [node name="alberto animacion" type="AnimatedSprite2D" parent="."]
 position = Vector2(-7.00001, 7)
 scale = Vector2(0.69697, 0.708333)
 sprite_frames = SubResource("SpriteFrames_i8bvd")
-frame_progress = 0.188495
+animation = &"new_animation"
+frame_progress = 0.125084
 script = ExtResource("3_pgws3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -39,3 +60,9 @@ shape = SubResource("CapsuleShape2D_mn8et")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(2, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../alberto animacion")
+libraries = {
+"": SubResource("AnimationLibrary_ajx1y")
+}
