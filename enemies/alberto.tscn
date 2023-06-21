@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbvunhyh4c6l4"]
+[gd_scene load_steps=10 format=3 uid="uid://cbvunhyh4c6l4"]
 
+[ext_resource type="Script" path="res://enemies/signal_bus.gd" id="1_aoa5r"]
 [ext_resource type="Texture2D" uid="uid://0k8lq04rk3mv" path="res://art/enemyWalking_1.png" id="2_hxqv4"]
 [ext_resource type="Script" path="res://enemies/alberto animacion.gd" id="3_pgws3"]
 [ext_resource type="Texture2D" uid="uid://bdq2my6texxhf" path="res://art/enemyWalking_2.png" id="3_rhrcx"]
@@ -45,6 +46,7 @@ _data = {
 }
 
 [node name="Alberto" type="CharacterBody2D"]
+script = ExtResource("1_aoa5r")
 
 [node name="alberto animacion" type="AnimatedSprite2D" parent="."]
 position = Vector2(-7.00001, 7)
@@ -70,3 +72,4 @@ libraries = {
 
 [node name="Damageable" type="Node" parent="."]
 script = ExtResource("4_brsb7")
+health = null
