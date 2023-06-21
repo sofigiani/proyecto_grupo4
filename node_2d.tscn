@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b2qi78yd4ghdd"]
+[gd_scene load_steps=16 format=3 uid="uid://b2qi78yd4ghdd"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_oo3by"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_tnh5i"]
@@ -462,6 +462,9 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e3xpf"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qm8vj"]
+radius = 12.0
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, 325)
 script = ExtResource("1_oo3by")
@@ -492,6 +495,12 @@ shape = SubResource("CapsuleShape2D_e3xpf")
 [node name="Camera2D" type="Camera2D" parent="TileMap/CharacterBody2D"]
 position = Vector2(244, -115)
 editor_draw_screen = false
+
+[node name="Area2D" type="Area2D" parent="TileMap/CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/CharacterBody2D/Area2D"]
+position = Vector2(278, -121)
+shape = SubResource("CapsuleShape2D_qm8vj")
 
 [node name="Alberto" parent="TileMap" instance=ExtResource("9_jytfb")]
 position = Vector2(856, -92)

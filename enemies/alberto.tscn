@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbvunhyh4c6l4"]
+[gd_scene load_steps=9 format=3 uid="uid://cbvunhyh4c6l4"]
 
 [ext_resource type="Texture2D" uid="uid://0k8lq04rk3mv" path="res://art/enemyWalking_1.png" id="2_hxqv4"]
 [ext_resource type="Script" path="res://enemies/alberto animacion.gd" id="3_pgws3"]
 [ext_resource type="Texture2D" uid="uid://bdq2my6texxhf" path="res://art/enemyWalking_2.png" id="3_rhrcx"]
+[ext_resource type="Script" path="res://enemies/Damageable.gd" id="4_brsb7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i8bvd"]
 resource_name = "a"
@@ -50,7 +51,7 @@ position = Vector2(-7.00001, 7)
 scale = Vector2(0.69697, 0.708333)
 sprite_frames = SubResource("SpriteFrames_i8bvd")
 animation = &"new_animation"
-frame_progress = 0.125084
+frame_progress = 0.0550462
 script = ExtResource("3_pgws3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -66,3 +67,6 @@ root_node = NodePath("../alberto animacion")
 libraries = {
 "": SubResource("AnimationLibrary_ajx1y")
 }
+
+[node name="Damageable" type="Node" parent="."]
+script = ExtResource("4_brsb7")
