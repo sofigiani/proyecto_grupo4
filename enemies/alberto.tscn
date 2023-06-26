@@ -72,4 +72,3 @@ libraries = {
 
 [node name="Damageable" type="Node" parent="."]
 script = ExtResource("4_brsb7")
-health = null
