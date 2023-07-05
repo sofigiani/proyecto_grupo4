@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b2qi78yd4ghdd"]
+[gd_scene load_steps=19 format=3 uid="uid://b2qi78yd4ghdd"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_oo3by"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_tnh5i"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cbvunhyh4c6l4" path="res://enemies/alberto.tscn" id="9_jytfb"]
 [ext_resource type="Script" path="res://enemies/alberto.gd" id="10_npdd4"]
 [ext_resource type="PackedScene" uid="uid://c7tffr3i7nivw" path="res://UI/health_changed_management.tscn" id="12_q1ci1"]
+[ext_resource type="Script" path="res://Control.gd" id="13_eqa5o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxkue"]
 texture = ExtResource("6_a17ki")
@@ -512,5 +513,12 @@ rotation = -1.5708
 script = ExtResource("10_npdd4")
 
 [node name="HealthChangedManagement" parent="." instance=ExtResource("12_q1ci1")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_eqa5o")
 
 [connection signal="body_entered" from="TileMap/CharacterBody2D/espada" to="TileMap/CharacterBody2D/espada" method="_on_body_entered"]
