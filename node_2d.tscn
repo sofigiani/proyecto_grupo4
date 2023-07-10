@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b2qi78yd4ghdd"]
+[gd_scene load_steps=14 format=3 uid="uid://b2qi78yd4ghdd"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_oo3by"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_tnh5i"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://sv7r3eyeg0at" path="res://art/playerGrey_walk2.png" id="5_1kqf8"]
 [ext_resource type="Texture2D" uid="uid://ckybbp5xj3aos" path="res://PurpleRocks_2.png" id="6_a17ki"]
 [ext_resource type="Script" path="res://TileMap.gd" id="7_ydo6r"]
+[ext_resource type="PackedScene" uid="uid://5rfqcf2j5tuc" path="res://albertojr.tscn" id="9_qeslk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxkue"]
 texture = ExtResource("6_a17ki")
@@ -490,3 +491,6 @@ shape = SubResource("CapsuleShape2D_e3xpf")
 [node name="Camera2D" type="Camera2D" parent="TileMap/CharacterBody2D"]
 position = Vector2(244, -115)
 editor_draw_screen = false
+
+[node name="enemy" parent="." instance=ExtResource("9_qeslk")]
+position = Vector2(872, -53)
