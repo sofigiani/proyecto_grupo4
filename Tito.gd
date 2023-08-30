@@ -31,5 +31,3 @@ func respawn():
 	position.x = 34
 	position.y = 9
 
-
-

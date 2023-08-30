@@ -508,6 +508,13 @@ offset_right = 178.0
 offset_bottom = 252.0
 text = "noche"
 
+[node name="auto" type="Button" parent="TileMap"]
+offset_left = 207.0
+offset_top = 205.0
+offset_right = 296.0
+offset_bottom = 253.0
+text = "auto"
+
 [node name="enemy" parent="." instance=ExtResource("9_qeslk")]
 position = Vector2(872, -53)
 
@@ -515,3 +522,4 @@ position = Vector2(872, -53)
 position = Vector2(3074, 105)
 
 [connection signal="pressed" from="TileMap/noche" to="." method="_on_noche_pressed"]
+[connection signal="pressed" from="TileMap/auto" to="." method="_on_auto_pressed"]

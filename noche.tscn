@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dps4otf545rmv"]
+[gd_scene load_steps=13 format=3 uid="uid://dps4otf545rmv"]
 
+[ext_resource type="Script" path="res://noche.gd" id="1_7boh0"]
 [ext_resource type="Texture2D" path="res://tilesetnight.png" id="1_pthxf"]
 [ext_resource type="Script" path="res://Tito.gd" id="2_3ddqn"]
 [ext_resource type="Texture2D" uid="uid://cujw3vpo4nq14" path="res://art/playerGrey_up1.png" id="3_g5loc"]
@@ -813,6 +814,7 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 modulate = Color(0.407843, 0.129412, 0.00784314, 1)
+script = ExtResource("1_7boh0")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(121, 325)
@@ -857,8 +859,16 @@ offset_right = 308.0
 offset_bottom = 653.0
 text = "dia"
 
+[node name="autom" type="Button" parent="TileMap"]
+offset_left = 207.0
+offset_top = 273.0
+offset_right = 296.0
+offset_bottom = 335.0
+text = "auto"
+
 [node name="enemy" parent="." instance=ExtResource("7_h5gnt")]
 position = Vector2(2529, 203)
 
 [connection signal="pressed" from="TileMap/dia" to="TileMap/Tito" method="_on_dia_pressed"]
 [connection signal="pressed" from="TileMap/dia" to="enemy" method="_on_dia_pressed"]
+[connection signal="pressed" from="TileMap/autom" to="TileMap/Tito" method="_on_auto_pressed"]
