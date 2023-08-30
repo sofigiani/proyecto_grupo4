@@ -30,3 +30,6 @@ func _physics_process(delta):
 func respawn():
 	position.x = 34
 	position.y = 9
+
+
+

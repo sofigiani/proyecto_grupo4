@@ -21,3 +21,7 @@ func _on_top_body_entered(body):
 func _on_costados_body_entered(body):
 	if body.get_name() == "Tito":
 		body.respawn()
+
+
+func _on_dia_pressed():
+	get_tree().change_scene_to_file("res://node_2d.tscn")

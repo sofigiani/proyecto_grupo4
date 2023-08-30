@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cexd23wr8diwi"]
+[gd_scene load_steps=6 format=3 uid="uid://2r2fmbhiltr1"]
 
 [ext_resource type="Texture2D" uid="uid://bdq2my6texxhf" path="res://art/enemyWalking_2.png" id="1_1ppp3"]
 [ext_resource type="Script" path="res://albertojr.gd" id="1_uowkb"]

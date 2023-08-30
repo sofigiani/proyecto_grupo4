@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dtc2wxmtckyb2" path="res://art/playerGrey_walk1.png" id="4_t6o1l"]
 [ext_resource type="Texture2D" uid="uid://sv7r3eyeg0at" path="res://art/playerGrey_walk2.png" id="5_1kqf8"]
 [ext_resource type="Texture2D" uid="uid://ckybbp5xj3aos" path="res://PurpleRocks_2.png" id="6_a17ki"]
-[ext_resource type="PackedScene" uid="uid://cexd23wr8diwi" path="res://albertojr.tscn" id="9_qeslk"]
+[ext_resource type="PackedScene" uid="uid://2r2fmbhiltr1" path="res://albertojr.tscn" id="9_qeslk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxkue"]
 texture = ExtResource("6_a17ki")
@@ -464,10 +464,11 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e3xpf"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 position = Vector2(0, 325)
 script = ExtResource("1_oo3by")
 metadata/_edit_horizontal_guides_ = []
+metadata/_edit_group_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-34, -9)
