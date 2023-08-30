@@ -843,3 +843,11 @@ editor_draw_screen = false
 
 [node name="enemy" parent="." instance=ExtResource("7_h5gnt")]
 position = Vector2(2529, 203)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_left = -2576.0
+offset_top = -2480.0
+offset_right = 8984.0
+offset_bottom = 6060.0
+color = Color(0.0156863, 0.0156863, 0.0156863, 1)
