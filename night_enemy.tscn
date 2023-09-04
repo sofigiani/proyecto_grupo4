@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcvnjfh4iam3g"]
+
+[ext_resource type="Script" path="res://night_enemy.gd" id="1_nbtwk"]
+[ext_resource type="Texture2D" uid="uid://c033mqibu4v2m" path="res://art/puflle.png" id="1_qkvbn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mck2p"]
+radius = 15.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8u03"]
+size = Vector2(39, 13.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xar2u"]
+size = Vector2(60, 30)
+
+[node name="night enemy" type="CharacterBody2D"]
+script = ExtResource("1_nbtwk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(34, 44)
+shape = SubResource("CircleShape2D_mck2p")
+
+[node name="Puffle" type="Sprite2D" parent="."]
+position = Vector2(35.9991, 31.7639)
+scale = Vector2(0.0545311, 0.0503935)
+texture = ExtResource("1_qkvbn")
+
+[node name="Top" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+position = Vector2(35.5, 23.625)
+shape = SubResource("RectangleShape2D_v8u03")
+
+[node name="Costados" type="Area2D" parent="."]
+position = Vector2(26, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Costados"]
+position = Vector2(11, 25)
+shape = SubResource("RectangleShape2D_xar2u")
+
+[connection signal="body_entered" from="Top" to="." method="_on_top_body_entered"]
+[connection signal="body_entered" from="Costados" to="." method="_on_costados_body_entered"]

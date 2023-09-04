@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://dps4otf545rmv"]
 
 [ext_resource type="Script" path="res://noche.gd" id="1_7boh0"]
-[ext_resource type="Texture2D" path="res://tilesetnight.png" id="1_pthxf"]
+[ext_resource type="Texture2D" uid="uid://bdb6a78cel8pn" path="res://tilesetnight.png" id="1_pthxf"]
 [ext_resource type="Script" path="res://Tito.gd" id="2_3ddqn"]
 [ext_resource type="Texture2D" uid="uid://cujw3vpo4nq14" path="res://art/playerGrey_up1.png" id="3_g5loc"]
 [ext_resource type="Texture2D" uid="uid://ghc5pgnwqm2j" path="res://art/playerGrey_up2.png" id="4_ijcuw"]
 [ext_resource type="Texture2D" uid="uid://dtc2wxmtckyb2" path="res://art/playerGrey_walk1.png" id="5_4sv8a"]
 [ext_resource type="Texture2D" uid="uid://sv7r3eyeg0at" path="res://art/playerGrey_walk2.png" id="6_jp77h"]
-[ext_resource type="PackedScene" uid="uid://2r2fmbhiltr1" path="res://albertojr.tscn" id="7_h5gnt"]
+[ext_resource type="PackedScene" uid="uid://bcvnjfh4iam3g" path="res://night_enemy.tscn" id="9_sb0kk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5urf0"]
 texture = ExtResource("1_pthxf")
@@ -825,30 +825,30 @@ layer_0/tile_data = PackedInt32Array(131074, 1, 0, 196610, 1, 1, 131075, 65537, 
 
 [node name="ColorRect" type="ColorRect" parent="TileMap"]
 show_behind_parent = true
-offset_left = -2292.0
-offset_top = -2384.0
-offset_right = 9268.0
-offset_bottom = 6156.0
+offset_left = -2408.0
+offset_top = -2121.0
+offset_right = 9152.0
+offset_bottom = 6419.0
 color = Color(0.0156863, 0.0156863, 0.0156863, 1)
 
 [node name="Tito" type="CharacterBody2D" parent="TileMap"]
-position = Vector2(-87, -316)
+position = Vector2(105, -312)
 collision_layer = 2
 script = ExtResource("2_3ddqn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TileMap/Tito"]
-position = Vector2(243, -114.25)
+position = Vector2(-1, 2)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_bknxi")
 animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Tito"]
-position = Vector2(242.897, -114.25)
+position = Vector2(0, 1)
 scale = Vector2(2.70848, 2.33134)
 shape = SubResource("CapsuleShape2D_ts2ph")
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Tito"]
-position = Vector2(244, -115)
+position = Vector2(-2, 5)
 editor_draw_screen = false
 
 [node name="dia" type="Button" parent="TileMap"]
@@ -866,9 +866,11 @@ offset_right = 296.0
 offset_bottom = 335.0
 text = "auto"
 
-[node name="enemy" parent="." instance=ExtResource("7_h5gnt")]
-position = Vector2(2529, 203)
+[node name="night enemy" parent="." instance=ExtResource("9_sb0kk")]
+visible = false
+position = Vector2(647, 316)
 
+[connection signal="pressed" from="TileMap/dia" to="." method="_on_dia_pressed"]
 [connection signal="pressed" from="TileMap/dia" to="TileMap/Tito" method="_on_dia_pressed"]
-[connection signal="pressed" from="TileMap/dia" to="enemy" method="_on_dia_pressed"]
+[connection signal="pressed" from="TileMap/autom" to="." method="_on_autom_pressed"]
 [connection signal="pressed" from="TileMap/autom" to="TileMap/Tito" method="_on_auto_pressed"]
