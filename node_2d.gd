@@ -24,3 +24,14 @@ func _on_noche_pressed():
 
 func _on_auto_pressed():
 	_cambio_automatico()
+
+
+func _on_piso_body_entered(body):
+	if body.get_name() == "Tito":
+		body.respawn()
+
+
+func _on_fin_body_entered(body):
+	if body.get_name() == "Tito":
+		body.respawn()
+

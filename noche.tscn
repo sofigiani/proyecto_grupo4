@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dps4otf545rmv"]
+[gd_scene load_steps=14 format=3 uid="uid://dps4otf545rmv"]
 
 [ext_resource type="Script" path="res://noche.gd" id="1_7boh0"]
 [ext_resource type="Texture2D" uid="uid://bdb6a78cel8pn" path="res://tilesetnight.png" id="1_pthxf"]
@@ -812,6 +812,9 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ts2ph"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56kws"]
+size = Vector2(11387, 1129)
+
 [node name="Node2D" type="Node2D"]
 modulate = Color(0.407843, 0.129412, 0.00784314, 1)
 script = ExtResource("1_7boh0")
@@ -858,6 +861,7 @@ offset_top = 592.0
 offset_right = 308.0
 offset_bottom = 653.0
 text = "dia"
+metadata/_edit_use_anchors_ = true
 
 [node name="autom" type="Button" parent="TileMap"]
 offset_left = 207.0
@@ -865,6 +869,13 @@ offset_top = 273.0
 offset_right = 296.0
 offset_bottom = 335.0
 text = "auto"
+metadata/_edit_use_anchors_ = true
+
+[node name="fin" type="Area2D" parent="TileMap"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/fin"]
+position = Vector2(3335.5, 1614.5)
+shape = SubResource("RectangleShape2D_56kws")
 
 [node name="night enemy" parent="." instance=ExtResource("9_sb0kk")]
 visible = false
@@ -874,3 +885,4 @@ position = Vector2(647, 316)
 [connection signal="pressed" from="TileMap/dia" to="TileMap/Tito" method="_on_dia_pressed"]
 [connection signal="pressed" from="TileMap/autom" to="." method="_on_autom_pressed"]
 [connection signal="pressed" from="TileMap/autom" to="TileMap/Tito" method="_on_auto_pressed"]
+[connection signal="body_entered" from="TileMap/fin" to="." method="_on_fin_body_entered"]

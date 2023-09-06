@@ -27,4 +27,6 @@ func _on_autom_pressed():
 	_cambio_automatic()
 
 
-
+func _on_fin_body_entered(body):
+	if body.get_name() == "Tito":
+		body.respawn()
