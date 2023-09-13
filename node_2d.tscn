@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b2qi78yd4ghdd"]
+[gd_scene load_steps=20 format=3 uid="uid://b2qi78yd4ghdd"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_oo3by"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_tnh5i"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://sv7r3eyeg0at" path="res://art/playerGrey_walk2.png" id="5_1kqf8"]
 [ext_resource type="Texture2D" uid="uid://ckybbp5xj3aos" path="res://PurpleRocks_2.png" id="6_a17ki"]
 [ext_resource type="PackedScene" uid="uid://2r2fmbhiltr1" path="res://albertojr.tscn" id="9_qeslk"]
+[ext_resource type="PackedScene" uid="uid://d34mri5dpcobc" path="res://chocador.tscn" id="10_sxfst"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ysq7u"]
 
@@ -9942,19 +9943,11 @@ shape = SubResource("RectangleShape2D_6ytrn")
 position = Vector2(3884.5, 1134.5)
 shape = SubResource("RectangleShape2D_t80ar")
 
-[node name="enemy" parent="." instance=ExtResource("9_qeslk")]
-position = Vector2(1653, 28)
-
-[node name="sides" type="Area2D" parent="enemy"]
-position = Vector2(-1580, -20)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy/sides"]
-position = Vector2(1559, 56)
-scale = Vector2(3.07812, 2.0625)
-polygon = PackedVector2Array(9.09637, 0.484848, 8.44666, -0.484848, -0.292419, 11.1, 0, 12, -8.77161, 0.484848, -7.797, 11.1515, -1, 12, 7.79688, 12.1212)
-
 [node name="enemy2" parent="." instance=ExtResource("9_qeslk")]
-position = Vector2(3074, 105)
+position = Vector2(868, -57)
+
+[node name="chocador" parent="." instance=ExtResource("10_sxfst")]
+position = Vector2(1535, 15)
 
 [connection signal="pressed" from="TileMap/noche" to="." method="_on_noche_pressed"]
 [connection signal="pressed" from="TileMap/auto" to="." method="_on_auto_pressed"]

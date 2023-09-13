@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d34mri5dpcobc"]
+
+[ext_resource type="Script" path="res://chocador.gd" id="1_58p1v"]
+[ext_resource type="Texture2D" uid="uid://c033mqibu4v2m" path="res://art/puflle.png" id="1_fjul6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r08o7"]
+radius = 37.0135
+
+[node name="chocador" type="CharacterBody2D"]
+script = ExtResource("1_58p1v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(114, 42)
+shape = SubResource("CircleShape2D_r08o7")
+
+[node name="Puflle" type="Sprite2D" parent="."]
+position = Vector2(114, 37)
+scale = Vector2(0.0695361, 0.0591667)
+texture = ExtResource("1_fjul6")
