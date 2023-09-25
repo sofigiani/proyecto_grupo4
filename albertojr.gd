@@ -8,6 +8,7 @@ func _on_top_body_entered(body):
 func _on_costados_body_entered(body):
 	if body.get_name() == "Tito":
 		body.respawn()
+		
 
 #var velocity = Vector2(100,0)
 func _physics_process(delta):

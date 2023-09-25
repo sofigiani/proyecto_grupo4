@@ -13,6 +13,7 @@ func _ready():
 	_cambio_automatico()
 	
 	
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -35,3 +36,8 @@ func _on_fin_body_entered(body):
 	if body.get_name() == "Tito":
 		body.respawn()
 
+
+ 
+func _on_meta_body_entered(body):
+	$meta/Label.show()
+	
