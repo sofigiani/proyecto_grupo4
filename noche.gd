@@ -23,7 +23,7 @@ func _on_dia_pressed():
 	get_tree().change_scene_to_file("res://node_2d.tscn")
 	
 func _on_autom_pressed():
-	print("siiii")
+	
 	_cambio_automatic()
 
 
