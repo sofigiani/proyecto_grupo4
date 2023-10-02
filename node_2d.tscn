@@ -56759,7 +56759,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e3xpf"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_djtjp"]
+radius = 9.96869
+height = 30.0257
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ytrn"]
 size = Vector2(2764.5, 20)
@@ -56790,9 +56792,10 @@ sprite_frames = SubResource("SpriteFrames_k4dpg")
 animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Tito"]
-position = Vector2(242.897, -114.25)
+position = Vector2(243, -114)
 scale = Vector2(2.70848, 2.33134)
-shape = SubResource("CapsuleShape2D_e3xpf")
+shape = SubResource("CapsuleShape2D_djtjp")
+debug_color = Color(0.968627, 0.6, 0.701961, 0.419608)
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Tito"]
 position = Vector2(244, -115)

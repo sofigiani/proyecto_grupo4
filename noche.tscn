@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dps4otf545rmv"]
+[gd_scene load_steps=16 format=3 uid="uid://dps4otf545rmv"]
 
 [ext_resource type="Script" path="res://noche.gd" id="1_7boh0"]
 [ext_resource type="Texture2D" uid="uid://bdb6a78cel8pn" path="res://tilesetnight.png" id="1_pthxf"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dtc2wxmtckyb2" path="res://art/playerGrey_walk1.png" id="5_4sv8a"]
 [ext_resource type="Texture2D" uid="uid://sv7r3eyeg0at" path="res://art/playerGrey_walk2.png" id="6_jp77h"]
 [ext_resource type="PackedScene" uid="uid://bcvnjfh4iam3g" path="res://night_enemy.tscn" id="9_sb0kk"]
+[ext_resource type="Texture2D" uid="uid://bh8r2cotk0rto" path="res://art/Finish-Line-PNG-Pic.png" id="9_y3kkn"]
+[ext_resource type="PackedScene" uid="uid://2r2fmbhiltr1" path="res://albertojr.tscn" id="10_vndod"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5urf0"]
 texture = ExtResource("1_pthxf")
@@ -879,8 +881,15 @@ position = Vector2(3335.5, 1614.5)
 shape = SubResource("RectangleShape2D_56kws")
 
 [node name="night enemy" parent="." instance=ExtResource("9_sb0kk")]
-visible = false
-position = Vector2(647, 316)
+position = Vector2(469, 316)
+
+[node name="Finish-line-png-pic" type="Sprite2D" parent="."]
+position = Vector2(5418, 435)
+scale = Vector2(0.765625, 0.734375)
+texture = ExtResource("9_y3kkn")
+
+[node name="enemy" parent="." instance=ExtResource("10_vndod")]
+position = Vector2(1087, 296)
 
 [connection signal="pressed" from="TileMap/dia" to="." method="_on_dia_pressed"]
 [connection signal="pressed" from="TileMap/dia" to="TileMap/Tito" method="_on_dia_pressed"]

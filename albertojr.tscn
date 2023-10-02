@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://2r2fmbhiltr1"]
+[gd_scene load_steps=7 format=3 uid="uid://2r2fmbhiltr1"]
 
 [ext_resource type="Texture2D" uid="uid://bdq2my6texxhf" path="res://art/enemyWalking_2.png" id="1_1ppp3"]
 [ext_resource type="Script" path="res://albertojr.gd" id="1_uowkb"]
@@ -13,6 +13,9 @@ height = 23.3363
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mpb1"]
 size = Vector2(60, 49.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6aqd6"]
+size = Vector2(60, 20)
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_uowkb")
@@ -42,5 +45,12 @@ shape = SubResource("CapsuleShape2D_o2muq")
 position = Vector2(-20, 34.625)
 shape = SubResource("RectangleShape2D_4mpb1")
 
+[node name="patas" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="patas"]
+position = Vector2(-18, 54)
+shape = SubResource("RectangleShape2D_6aqd6")
+
 [connection signal="body_entered" from="Top" to="." method="_on_top_body_entered"]
 [connection signal="body_entered" from="Costados" to="." method="_on_costados_body_entered"]
+[connection signal="body_entered" from="patas" to="." method="_on_patas_body_entered"]
