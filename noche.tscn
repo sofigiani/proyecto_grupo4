@@ -892,7 +892,5 @@ texture = ExtResource("9_y3kkn")
 position = Vector2(1087, 296)
 
 [connection signal="pressed" from="TileMap/dia" to="." method="_on_dia_pressed"]
-[connection signal="pressed" from="TileMap/dia" to="TileMap/Tito" method="_on_dia_pressed"]
 [connection signal="pressed" from="TileMap/autom" to="." method="_on_autom_pressed"]
-[connection signal="pressed" from="TileMap/autom" to="TileMap/Tito" method="_on_auto_pressed"]
 [connection signal="body_entered" from="TileMap/fin" to="." method="_on_fin_body_entered"]

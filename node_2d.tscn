@@ -1,13 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://b2qi78yd4ghdd"]
+[gd_scene load_steps=19 format=3 uid="uid://b2qi78yd4ghdd"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_oo3by"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_tnh5i"]
-[ext_resource type="Texture2D" uid="uid://cujw3vpo4nq14" path="res://art/playerGrey_up1.png" id="2_mi8il"]
 [ext_resource type="Texture2D" uid="uid://fmi72dnn21i5" path="res://art/pinche.png" id="2_y0lrj"]
-[ext_resource type="Texture2D" uid="uid://ghc5pgnwqm2j" path="res://art/playerGrey_up2.png" id="3_ahrfo"]
 [ext_resource type="Texture2D" uid="uid://pghasj6i2n57" path="res://art/Lava #4.png" id="4_8yn5y"]
-[ext_resource type="Texture2D" uid="uid://dtc2wxmtckyb2" path="res://art/playerGrey_walk1.png" id="4_t6o1l"]
-[ext_resource type="Texture2D" uid="uid://sv7r3eyeg0at" path="res://art/playerGrey_walk2.png" id="5_1kqf8"]
 [ext_resource type="Texture2D" uid="uid://ckybbp5xj3aos" path="res://PurpleRocks_2.png" id="6_a17ki"]
 [ext_resource type="PackedScene" uid="uid://2r2fmbhiltr1" path="res://albertojr.tscn" id="9_qeslk"]
 [ext_resource type="PackedScene" uid="uid://d34mri5dpcobc" path="res://chocador.tscn" id="10_sxfst"]
@@ -56734,34 +56730,11 @@ sources/0 = SubResource("TileSetAtlasSource_wgynt")
 sources/1 = SubResource("TileSetAtlasSource_va4tw")
 sources/4 = SubResource("TileSetAtlasSource_1bkig")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_k4dpg"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_mi8il")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_ahrfo")
-}],
-"loop": true,
-"name": &"up",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_t6o1l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_1kqf8")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_djtjp"]
 radius = 9.96869
 height = 30.0257
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v1jcl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ytrn"]
 size = Vector2(2764.5, 20)
@@ -56785,21 +56758,18 @@ layer_0/tile_data = PackedInt32Array(458755, 393216, 2, 393220, 458752, 1, 45875
 position = Vector2(34, 9)
 script = ExtResource("1_tnh5i")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TileMap/Tito"]
-position = Vector2(243, -114.25)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_k4dpg")
-animation = &"up"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Tito"]
-position = Vector2(243, -114)
+position = Vector2(125, -69)
 scale = Vector2(2.70848, 2.33134)
 shape = SubResource("CapsuleShape2D_djtjp")
 debug_color = Color(0.968627, 0.6, 0.701961, 0.419608)
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Tito"]
-position = Vector2(244, -115)
+position = Vector2(239, -82)
 editor_draw_screen = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TileMap/Tito"]
+sprite_frames = SubResource("SpriteFrames_v1jcl")
 
 [node name="noche" type="Button" parent="TileMap"]
 offset_left = 84.0
