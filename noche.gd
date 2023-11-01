@@ -27,5 +27,5 @@ func _on_autom_pressed():
 
 
 func _on_fin_body_entered(body):
-	if body.get_name() == "Tito":
+	if body.get_name() == "Tito_N":
 		body.respawn()

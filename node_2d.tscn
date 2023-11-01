@@ -56800,7 +56800,7 @@ size = Vector2(2764.5, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t80ar"]
 size = Vector2(8641, 137)
 
-[node name="Node2D2" type="Node2D"]
+[node name="Dia" type="Node2D"]
 position = Vector2(39, 326)
 script = ExtResource("1_oo3by")
 metadata/_edit_horizontal_guides_ = []
@@ -56821,15 +56821,13 @@ position = Vector2(239, -82)
 editor_draw_screen = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TileMap/Tito"]
-position = Vector2(207.5, 27.625)
+position = Vector2(216, 29)
 scale = Vector2(2.86207, 2.95834)
 sprite_frames = SubResource("SpriteFrames_iucih")
 animation = &"jump"
-frame = 1
-frame_progress = 0.472435
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Tito"]
-position = Vector2(207.5, 35)
+position = Vector2(218, 36)
 shape = SubResource("RectangleShape2D_iq8vp")
 
 [node name="noche" type="Button" parent="TileMap"]

@@ -28,12 +28,12 @@ func _on_auto_pressed():
 
 
 func _on_piso_body_entered(body):
-	if body.get_name() == "Tito":
+	if body.get_name() == "Tito" or body.get_name() == "Tito_N":
 		body.respawn()
 
 
 func _on_fin_body_entered(body):
-	if body.get_name() == "Tito":
+	if body.get_name() == "Tito" or body.get_name() == "Tito_N":
 		body.respawn()
 
 

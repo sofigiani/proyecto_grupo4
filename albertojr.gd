@@ -6,16 +6,16 @@ const JUMP_VELOCITY = 450.0
 var es_derecha = true
 
 func _on_top_body_entered(body):
-	if body.get_name() == "Tito":
+	if body.get_name() == "Tito" or body.get_name() == "Tito_N":
 		queue_free()
 
 func _on_costados_body_entered(body):
-	if body.get_name() == "Tito":
+	if body.get_name() == "Tito" or body.get_name() == "Tito_N":
 		body.respawn()
 		
 func _on_patas_body_entered(body):
-	if body.get_name() == "Tito":
-		queue_free()
+	if body.get_name() == "Tito" or body.get_name() == "Tito_N":
+		body.respawn()
 
 
 
@@ -23,7 +23,7 @@ func _on_Timer_timeout():
 	print(str($Timer.wait_time) + " second(s) finished")
 	
 func jump():
-	velocity.y = -400
+	velocity.y = -700
 	
 func jump_cut():
 	if velocity.y < -100:
