@@ -15,6 +15,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	
 	
+	
 	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
 		anim.play("walk")
 	else:
@@ -39,7 +40,10 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED) 
-
+		
+	if direction != 0:
+		$AnimatedSprite2D.flip_h = (direction == -1)
+	
 	move_and_slide()
 
 func respawn():

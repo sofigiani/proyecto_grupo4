@@ -39,6 +39,9 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_accept"):
 		anim.play("jump")
 		
+	if direction != 0:
+		$AnimatedSprite2D.flip_h = (direction == -1)
+		
 func respawn():
 	position.x = 151
 	position.y = 11
